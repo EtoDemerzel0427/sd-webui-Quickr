@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# media files
+assets/tmp/*
+examples/fspbt/woman_dance/woman_gen/whole_video_input/*
+examples/fspbt/woman_dance/woman_gen/whole_video_output/*
+
