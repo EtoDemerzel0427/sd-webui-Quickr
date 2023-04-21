@@ -137,15 +137,18 @@ class Script(scripts.Script):
     def run(self, p:StableDiffusionProcessingImg2Img, file_path, fps, file_obj, sfactor, sexp, freeze_input_fps, keep_fps, *args):
         # for now just try cut the video into frames and save them to tmp
         # to see if it works
+        print("We are running Quickr...")
         os.makedirs("tmp", exist_ok=True)
         input_video = VideoFileClip(file_path)
 
         # extract the audio
         audio = input_video.audio
         audio.save_audiofile("./tmp/audio.mp3")
+        print("Audio saved")
 
         # extract the frames
         input_video.write_images_sequence("./tmp/frame%06d.png", fps=fps)
+        print("Frames saved")
 
 
 
